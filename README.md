@@ -5,7 +5,7 @@
 
 <h5>1. Download the project</h5>
 
-<h5>2. Запустіть Докер. Відкрийте директорію з проектом в терміналі та виконайте команди</h5>
+<h5>2. Start Docker. Open the project directory in the terminal and execute the commands</h5>
 
 <pre>
 $ docker compose up -d
