@@ -26,7 +26,7 @@ class TaskFactory extends Factory
         return [
             'title' => $this->faker->words(3, 6),
             'descriptions' => $this->faker->sentence,
-            'file' => 'files/image_processing20210905-12024-1bz1uo4.gif',
+//             'file' => 'files/image_processing20210905-12024-1bz1uo4.gif',
             'status' => $this->faker->randomElement($status),
             'project_id' => random_int(1, 10)
         ];
