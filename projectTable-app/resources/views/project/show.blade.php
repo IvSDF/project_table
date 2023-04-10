@@ -44,20 +44,17 @@
                             <button type="submit" class="btn btn-link">All</button>
                         </a>
 
-                        <form method="post" action="{{ route( 'search', $project->id) }}">
-                            @csrf
+                        <form method="get" action="{{ route( 'project.show', $project->id) }}">
                             <input type="hidden" id="status" name="status" value="new">
                             <button type="submit" class="btn btn-link">New</button>
                         </form>
 
-                        <form method="post" action="{{ route( 'search', $project->id) }}">
-                            @csrf
+                        <form method="get" action="{{ route( 'project.show', $project->id) }}">
                             <input type="hidden" id="status" name="status" value="progress">
                             <button type="submit" class="btn btn-link">Progress</button>
                         </form>
 
-                        <form method="post" action="{{ route( 'search', $project->id) }}">
-                            @csrf
+                        <form method="get" action="{{ route( 'project.show', $project->id) }}">
                             <input type="hidden" id="status" name="status" value="done">
                             <button type="submit" class="btn btn-link">Done</button>
                         </form>

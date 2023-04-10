@@ -9,31 +9,21 @@ use App\Models\Task;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\URL;
+
 
 
 class ProjectController extends Controller
 {
-    public function index()
-    {
-        $projects = Project::all();
-        return view('home', ['projects' => $projects]);
-    }
-
-    public function show(Project $project)
+    public function show(Project $project, Request $request)
     {
         request()->session()->put(['project_id' => $project->id]);
-        $tasks = Task::all();
-        return view('project.show', [ 'project' => $project, 'tasks' => $tasks, 'task']);
-
-    }
-    public function search(Project $project, Request $request)
-    {
         if($request->get('status')){
             $status = $request->input('status');
             $tasks = DB::table('tasks')->where('status', '=', $status)->get();
             return view('project.show', [ 'project' => $project,  'tasks' => $tasks]);
-        }
+        }else
+            $tasks = Task::all();
+            return view('project.show', [ 'project' => $project, 'tasks' => $tasks, 'task']);
     }
 
     public function create()

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::middleware('auth')->group(function (){
-    Route::get('/', [ProjectController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('project.show');
 
@@ -30,7 +31,7 @@ Route::middleware('auth')->group(function (){
 
     Route::delete('/projects/{project}/destroy', [ProjectController::class, 'destroy'])->name('project.destroy');
 
-    Route::post('/projects/{project}/status', [ProjectController::class, 'search'])->name('search');
+    Route::get('/projects/{project}/status', [ProjectController::class, 'search'])->name('search');
 });
 
 Route::middleware('auth')->group(function (){
