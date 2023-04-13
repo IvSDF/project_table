@@ -17,7 +17,7 @@
                     </div>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2 mr-2">
                         <div class="mt-2 mr-2">
-                            <a href="#">
+                            <a href="{{ route( 'project.edit', $project->id) }}">
                                 <button type="button" class="btn btn-outline-warning">Edit</button>
                             </a>
                         </div>
